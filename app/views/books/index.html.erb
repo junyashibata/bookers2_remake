@@ -1,9 +1,11 @@
 <h1>Books</h1>
 <% @books.each do |book| %>
 <div>
+  <p>image<%= image_tag book.user.get_profile_image(100,100) %></p>
   <%= link_to book_path(book.id) do %>
     <p><%= book.title %></p>
   <% end %>
+  
   <p><%= book.body %></p>
 </div>
 <% end %>
