@@ -10,9 +10,10 @@ class BooksController < ApplicationController
     redirect_to book_path(@book)
   end
 
-
   def index
     @books = Book.all
+    @book_new = Book.new
+    @user = current_user
   end
 
   def show
